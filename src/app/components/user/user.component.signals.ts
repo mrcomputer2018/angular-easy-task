@@ -5,8 +5,8 @@ import { DUMMY_USERS } from '../../data/dummy-users';
     selector: '',
     standalone: true,
     imports: [],
-    templateUrl: '',
-    styleUrl: '',
+    templateUrl: './user.component.html',
+    styleUrls: [],
 })
 export class UserComponentSignals {
     // selecionando um usuario aleatoriamente do array DUMMY_USERS
