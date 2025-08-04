@@ -1,4 +1,5 @@
 import { Component, computed, EventEmitter, Input, input, Output } from '@angular/core';
+import { DUMMY_USER } from '../../data/dummy-users';
 
 @Component({
     selector: 'app-user',
@@ -7,9 +8,7 @@ import { Component, computed, EventEmitter, Input, input, Output } from '@angula
     templateUrl: './user.component.html',
 })
 export class UserComponent {
-    @Input({ required: true }) id!: string;
-    @Input({ required: true }) avatar!: string;
-    @Input({ required: true }) name!: string;
+    @Input({ required: true }) user!: DUMMY_USER;
     @Output() select = new EventEmitter<string>();
 
     //id = input.required<string>();
@@ -17,13 +16,9 @@ export class UserComponent {
     //name = input.required<string>();
     //select = output.required<string>();
 
-    get imagePath(): string {
-        return this.avatar;
-    }
-
    //imagePath = computed(() => this.avatar());
 
     onSelectUser() {
-        this.select.emit(this.id);
+        this.select.emit(this.user.id);
     }
 }
