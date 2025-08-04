@@ -1,12 +1,13 @@
 <div class="rounded-md shadow-sm overflow-hidden">
     <button
+        (click)="onSelectUser()"
         class="flex flex-row items-center gap-3 bg-[#433352] text-[ #c3b3d1 ] cursor-pointer w-full min-w-40 text-left hover:bg-[#9965dd] hover:text-[#150722] transition ease-in-out color duration-400 px-3 py-2"
     >
         <img
-            [src]="selectedUser.avatar"
-            [alt]="selectedUser.name"
+            [src]="imagePath"
+            [alt]="name"
             class="h-8 w-8 rounded-full shadow-md"
         />
-        <span>{{ selectedUser.name }}</span>
+        <span>{{ name }}</span>
     </button>
 </div>

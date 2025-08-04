@@ -30,3 +30,9 @@ export const DUMMY_USERS = [
         avatar: 'users/user-6.jpg',
     },
 ];
+
+export interface DUMMY_USER {
+    id: string;
+    name: string;
+    avatar: string;
+}
