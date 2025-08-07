@@ -12,7 +12,7 @@ import { TasksComponent } from "./components/tasks/tasks.component";
 export class AppComponent {
     title = 'angular-easy-task';
     users = DUMMY_USERS;
-    selectedUserId: string = "u1";
+    selectedUserId?: string;
     name: string = '';
 
     private get selectedUser() {

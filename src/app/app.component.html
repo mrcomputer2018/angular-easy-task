@@ -1,33 +1,19 @@
 <app-header />
-<main class="p-2 flex flex-row gap-4">
+<main class="p-2 flex flex-row gap-8 justify-center mt-6">
     <ul id="users" class="flex flex-col gap-2 max-w-60">
+        @for (user of users; track $index) {
         <li>
-            <app-user
-                [user]="users[0]"
-                (select)="onSelectUser($event)"
-            />
+            <app-user [user]="users[$index]" (select)="onSelectUser($event)" />
         </li>
-        <li>
-            <app-user
-                [user]="users[1]"
-                (select)="onSelectUser($event)"
-            />
-        </li>
-        <li>
-            <app-user
-                [user]="users[2]"
-                (select)="onSelectUser($event)"
-            />
-        </li>
-        <li>
-            <app-user
-                [user]="users[3]"
-                (select)="onSelectUser($event)"
-            />
-        </li>
+        }
     </ul>
     <div>
+        @if (selectedUserId) {
         <app-tasks [name]="name" />
+        } @else {
+        <p class="text-gray-500 text-center w-[800px] text-lg font-bold py-40">
+            Selecione um usuário para ver suas tarefas
+        </p>
+        }
     </div>
-
 </main>
