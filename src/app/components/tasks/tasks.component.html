@@ -13,15 +13,11 @@
 
     <div>
         <ul class="flex flex-col gap-4 rounded-md">
-            <li>
-                <app-task />
-            </li>
-             <li>
-                <app-task />
-            </li>
-             <li>
-                <app-task />
-            </li>
+            @for (task of tasks; track $index) {
+                <li>
+                    <app-task [task]="task"></app-task>
+                </li>
+            }
         </ul>
     </div>
 </section>
