@@ -1,4 +1,4 @@
-import { Task } from './../../data/dummy-tasks';
+import { Task } from '../../models/task.model';
 import { Component, Input } from '@angular/core';
 import { TaskComponent } from './task/task.component';
 import { dummyTasks } from '../../data/dummy-tasks';

@@ -13,7 +13,7 @@
 
     <div>
         <ul class="flex flex-col gap-4 rounded-md">
-            @for (task of tasks; track $index) {
+            @for (task of selectedUserTasks; track task.id) {
                 <li>
                     <app-task [task]="task"></app-task>
                 </li>

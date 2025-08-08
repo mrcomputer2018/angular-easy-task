@@ -1,5 +1,5 @@
 import { Component, computed, EventEmitter, Input, input, Output } from '@angular/core';
-import { DUMMY_USER } from '../../data/dummy-users';
+import { type User } from '../../models/user.model';
 
 @Component({
     selector: 'app-user',
@@ -8,7 +8,8 @@ import { DUMMY_USER } from '../../data/dummy-users';
     templateUrl: './user.component.html',
 })
 export class UserComponent {
-    @Input({ required: true }) user!: DUMMY_USER;
+    @Input({ required: true }) user!: User;
+    @Input({required: true}) selected!: boolean;
     @Output() select = new EventEmitter<string>();
 
     //id = input.required<string>();
