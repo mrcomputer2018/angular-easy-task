@@ -2,22 +2,23 @@ import { Task } from '../../models/task.model';
 import { Component, Input } from '@angular/core';
 import { TaskComponent } from './task/task.component';
 import { dummyTasks } from '../../data/dummy-tasks';
+import { NewTaskComponent } from "./new-task/new-task.component";
 
 @Component({
     selector: 'app-tasks',
     standalone: true,
-    imports: [TaskComponent],
+    imports: [TaskComponent, NewTaskComponent],
     templateUrl: './tasks.component.html',
 })
 export class TasksComponent {
     @Input({ required: true }) userId!: string;
     @Input({ required: true }) name!: string;
+    isAddingTask: boolean = false;
 
     tasks: Task[] = dummyTasks;
 
-    addTask() {
-        // Logic to add a task
-        console.log('Task added');
+    onStartAddTask() {
+        this.isAddingTask = true
     }
 
     get selectedUserTasks() {

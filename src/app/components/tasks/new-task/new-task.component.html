@@ -1,0 +1,37 @@
+<dialog
+    open
+    class="bg-zinc-900 w-full h-screen fixed top-0 left-0 flex items-center justify-center"
+>
+    <div class="bg-[#433352] p-10 w-[700px] shadow-md rounded-md">
+        <h2 class="text-3xl font-bold mb-6 text-[#d0c2e1]">Adicionar Tarefa</h2>
+        <form action="">
+            <div class="flex flex-col gap-2 mb-2">
+                <label for="title" class="text-[#ab9ac0] text-md">Titulo</label>
+                <input
+                    class="bg-[#d0c2e1] px-2 py-1 rounded-sm"
+                    type="text"
+                    id="title"
+                    name="title"
+                />
+            </div>
+            <div class="flex flex-col gap-2">
+                <label for="summary" class="text-[#ab9ac0]">Resumo</label>
+                <textarea
+                    class="bg-[#d0c2e1]"
+                    type="text"
+                    id="summary"
+                    name="summary"
+                    rows="5"
+                ></textarea>
+            </div>
+            <div>
+                <label for="due-date">data de vencimento</label>
+                <input type="date" id="due-date" name="due-date" />
+            </div>
+            <div class="actions">
+                <button type="button">Cancelar</button>
+                <button type="submit">Criar</button>
+            </div>
+        </form>
+    </div>
+</dialog>
